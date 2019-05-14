@@ -32,16 +32,17 @@
             this.cbList = new System.Windows.Forms.ComboBox();
             this.txtList = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.IblResult = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbList
             // 
             this.cbList.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbList.FormattingEnabled = true;
             resources.ApplyResources(this.cbList, "cbList");
+            this.cbList.FormattingEnabled = true;
             this.cbList.Name = "cbList";
+            this.cbList.SelectedIndexChanged += new System.EventHandler(this.cbList_SelectedIndexChanged);
             // 
             // txtList
             // 
@@ -53,23 +54,25 @@
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // IblResult
+            // lblResult
             // 
-            resources.ApplyResources(this.IblResult, "IblResult");
-            this.IblResult.Name = "IblResult";
+            resources.ApplyResources(this.lblResult, "lblResult");
+            this.lblResult.Name = "lblResult";
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.IblResult);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtList);
             this.Controls.Add(this.cbList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +83,7 @@
         private System.Windows.Forms.ComboBox cbList;
         private System.Windows.Forms.TextBox txtList;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label IblResult;
+        private System.Windows.Forms.Label lblResult;
     }
 }
 
